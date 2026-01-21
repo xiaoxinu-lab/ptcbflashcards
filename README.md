@@ -27,9 +27,8 @@ A mobile-friendly web application for studying the top 200 pharmacy medications 
 
 ## Live Demo
 
-Visit the app: [https://YOUR-USERNAME.github.io/ptcb-flashcards](https://YOUR-USERNAME.github.io/ptcb-flashcards)
+Visit the app: www.ptcbflash.com
 
-*(Replace YOUR-USERNAME with your actual GitHub username)*
 
 ## How to Use
 
@@ -45,7 +44,7 @@ To run this locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/ptcb-flashcards.git
+   git clone https://github.com/xiaoxinu-lab/ptcb-flashcards.git
    cd ptcb-flashcards
    ```
 

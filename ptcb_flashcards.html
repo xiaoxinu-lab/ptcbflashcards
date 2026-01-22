@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PTCB Top 200 Drugs Prep</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -110,15 +112,16 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
-            font-size: 24px;
+            font-size: 22px;
+            color: white;
         }
 
-        .icon-cardiovascular { background: linear-gradient(135deg, #ff4757 0%, #d63447 100%); }
-        .icon-infections { background: linear-gradient(135deg, #4a8eff 0%, #3367d6 100%); }
-        .icon-neurology { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
-        .icon-metabolic { background: linear-gradient(135deg, #ff7f50 0%, #ff6347 100%); }
-        .icon-pain { background: linear-gradient(135deg, #20e3b2 0%, #1abc9c 100%); }
-        .icon-stability { background: linear-gradient(135deg, #ffa502 0%, #ff7f00 100%); }
+        .icon-cardiovascular { background: linear-gradient(135deg, #2F2532 0%, #2F2532 100%); }
+        .icon-infections { background: linear-gradient(135deg, #111621 0%, #111621 100%); }
+        .icon-neurology { background: linear-gradient(135deg, #292743 0%, #292743 100%); }
+        .icon-metabolic { background: linear-gradient(135deg, #312A2E 0%, #312A2E 100%); }
+        .icon-pain { background: linear-gradient(135deg, #213135 0%, #213135 100%); }
+        .icon-stability { background: linear-gradient(135deg, #312E2D 0%, #312E2D 100%); }
 
         .category-card h3 {
             font-size: 18px;
@@ -132,7 +135,7 @@
         }
 
         .all-drugs-button {
-            background: linear-gradient(135deg, #4a8eff 0%, #3367d6 100%);
+            background: linear-gradient(135deg, #3367d6 0%, #5A41BF 100%);
             border: none;
             border-radius: 16px;
             padding: 20px;
@@ -155,8 +158,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 22px;
             margin-right: 15px;
+        }
+        
+        .all-drugs-icon i {
+            color: white;
         }
 
         .all-drugs-text h3 {
@@ -291,6 +298,11 @@
             margin-right: 15px;
             flex-shrink: 0;
         }
+        
+        .info-icon i {
+            color: #4a8eff;
+            font-size: 16px;
+        }
 
         .info-content {
             flex: 1;
@@ -348,6 +360,13 @@
             width: 24px;
             height: 24px;
             margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .section-icon i {
+            font-size: 18px;
         }
 
         .section-title {
@@ -373,7 +392,11 @@
         .checkmark {
             color: #4a8eff;
             margin-right: 10px;
-            font-size: 18px;
+            font-size: 16px;
+        }
+        
+        .checkmark i {
+            font-size: 16px;
         }
 
         .adverse-reaction {
@@ -403,8 +426,13 @@
         }
 
         .storage-icon {
-            font-size: 24px;
+            font-size: 22px;
             margin-right: 12px;
+            color: #4a8eff;
+        }
+        
+        .storage-icon i {
+            font-size: 22px;
         }
 
         .storage-text {
@@ -485,7 +513,7 @@
 
         @media (min-width: 768px) {
             body {
-                background-color: white;
+                background-color: #111621;
             }
         }
     </style>
@@ -500,49 +528,63 @@
 
             <div class="welcome-section">
                 <h2>Welcome to PTCB Top 200 Drugs Prep</h2>
-                <p>Hello, Student! Select a category to start.</p>
+                <p>Select a category to start.</p>
             </div>
 
             <div class="categories-grid">
                 <div class="category-card" onclick="loadCategory('Cardiovascular')">
-                    <div class="category-icon icon-cardiovascular">❤️</div>
+                    <div class="category-icon icon-cardiovascular">
+                        <i class="fa-solid fa-heart-pulse" style="color: #de4e48;"></i>
+                    </div>
                     <h3>Cardiovascular</h3>
                     <p class="count" id="cardiovascularCount">0 Drugs</p>
                 </div>
 
                 <div class="category-card" onclick="loadCategory('Infections')">
-                    <div class="category-icon icon-infections">🦠</div>
+                    <div class="category-icon icon-infections">
+                        <i class="fa-solid fa-disease" style="color: #4e80ee;"></i>
+                    </div>
                     <h3>Infections</h3>
                     <p class="count" id="infectionsCount">0 Drugs</p>
                 </div>
 
                 <div class="category-card" onclick="loadCategory('Neurology')">
-                    <div class="category-icon icon-neurology">🧠</div>
+                    <div class="category-icon icon-neurology">
+                        <i class="fa-solid fa-brain" style="color: #9d59ef;"></i>
+                    </div>
                     <h3>Neurology & Mental Health</h3>
                     <p class="count" id="neurologyCount">0 Drugs</p>
                 </div>
 
                 <div class="category-card" onclick="loadCategory('Metabolic')">
-                    <div class="category-icon icon-metabolic">💧</div>
+                    <div class="category-icon icon-metabolic">
+                        <i class="fa-solid fa-droplet" style="color: #e87b35;"></i>
+                    </div>
                     <h3>Metabolic & Endocrine</h3>
                     <p class="count" id="metabolicCount">0 Drugs</p>
                 </div>
 
                 <div class="category-card" onclick="loadCategory('Pain')">
-                    <div class="category-icon icon-pain">💊</div>
+                    <div class="category-icon icon-pain">
+                        <i class="fa-solid fa-bandage" style="color: #5ec269;"></i>
+                    </div>
                     <h3>Pain & Inflammation</h3>
                     <p class="count" id="painCount">0 Drugs</p>
                 </div>
 
                 <div class="category-card" onclick="loadCategory('Stability')">
-                    <div class="category-icon icon-stability">🌡️</div>
+                    <div class="category-icon icon-stability">
+                        <i class="fa-solid fa-temperature-low" style="color: #e9a23b;"></i>
+                    </div>
                     <h3>Drug Stability & Handling</h3>
                     <p class="count" id="stabilityCount">0 Drugs</p>
                 </div>
             </div>
 
             <button class="all-drugs-button" onclick="loadCategory('All')">
-                <div class="all-drugs-icon">📚</div>
+                <div class="all-drugs-icon">
+                    <i class="fa-solid fa-book-medical" style="color: #ffffff;"></i>
+                </div>
                 <div class="all-drugs-text">
                     <h3>All Top 200 Drugs</h3>
                     <p>Comprehensive Study Set</p>
@@ -553,7 +595,9 @@
         <!-- Flashcard Screen -->
         <div id="flashcardScreen" class="flashcard-screen">
             <div class="header">
-                <button class="back-button" onclick="goHome()">✕</button>
+                <button class="back-button" onclick="goHome()">
+                    <i class="fa-solid fa-xmark" style="color: #2b5ae3;"></i>
+                </button>
                 <h1>PTCB Prep</h1>
             </div>
 
@@ -575,7 +619,9 @@
                     <div class="generic-name" id="genericName">Amoxicillin/Clavulanate Potassium</div>
 
                     <div class="card-info-item">
-                        <div class="info-icon">▶️</div>
+                        <div class="info-icon">
+                            <i class="fa-solid fa-tag" style="color: #2b5ae3;"></i>
+                        </div>
                         <div class="info-content">
                             <div class="info-label">BRAND NAME</div>
                             <div class="info-value" id="brandName">Augmentin</div>
@@ -583,7 +629,9 @@
                     </div>
 
                     <div class="card-info-item">
-                        <div class="info-icon">💊</div>
+                        <div class="info-icon">
+                            <i class="fa-solid fa-arrow-up-from-ground-water" style="color: #2b5ae3;"></i>
+                        </div>
                         <div class="info-content">
                             <div class="info-label">DRUG CLASS</div>
                             <div class="info-value" id="drugClass">Penicillin Antibiotic</div>
@@ -591,7 +639,9 @@
                     </div>
 
                     <div class="card-info-item">
-                        <div class="info-icon">📋</div>
+                        <div class="info-icon">
+                            <i class="fa-solid fa-user-nurse" style="color: #2b5ae3;"></i>
+                        </div>
                         <div class="info-content">
                             <div class="info-label">PRIMARY INDICATION</div>
                             <div class="info-value" id="primaryIndication">Bacterial Infection</div>
@@ -609,7 +659,7 @@
 
                     <div class="section" id="sideEffectsSection">
                         <div class="section-header">
-                            <span class="section-icon">🔵</span>
+                            <span class="section-icon"><i class="fa-solid fa-heart-circle-exclamation" style="color: #dd524c;"></i></span>
                             <span class="section-title">Common Side Effects</span>
                         </div>
                         <div class="section-content" id="sideEffectsContent">
@@ -618,7 +668,7 @@
 
                     <div class="section" id="adverseReactionsSection">
                         <div class="section-header">
-                            <span class="section-icon">⚠️</span>
+                            <span class="section-icon"><i class="fa-solid fa-truck-medical" style="color: #5EC269;"></i></span>
                             <span class="section-title">Notable Adverse Reactions</span>
                         </div>
                         <div class="section-content">
@@ -629,7 +679,7 @@
 
                     <div class="section" id="storageSection">
                         <div class="section-header">
-                            <span class="section-icon">❄️</span>
+                            <span class="section-icon"><i class="fa-solid fa-snowflake" style="color: #e87b35;"></i></span>
                             <span class="section-title">Storage & Handling</span>
                         </div>
                         <div class="section-content">
@@ -642,15 +692,15 @@
 
             <div class="action-buttons">
                 <button class="flip-button" id="flipButton" onclick="flipCard()">
-                    <span id="flipIcon">🔄</span>
+                    <i class="fa-solid fa-rotate" style="color: #ffffff;" id="flipIcon"></i>
                     <span id="flipText" style="margin-left: 8px;">Tap to Flip</span>
                 </button>
                 <div class="navigation-buttons">
                     <button class="nav-button prev" id="prevButton" onclick="previousCard()">
-                        ← Previous
+                        <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i> Previous
                     </button>
                     <button class="nav-button next" id="nextButton" onclick="nextCard()">
-                        Next Card →
+                        Next Card <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i>
                     </button>
                 </div>
             </div>
@@ -660,56 +710,56 @@
     <script>
         // Drug data - Updated from CSV
         const drugData = [
-{"genericName":"Lisinopril","brandName":"Prinivil, Zestril","drugClass":"ACE Inhibitor","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"Dizziness, dry cough","adverseReactions":"Kidney damage","storage":"--"},
+{"genericName":"Lisinopril","brandName":"Prinivil, Zestril","drugClass":"ACE Inhibitor","indication":"Hypertension","schedule":"Rx Only","sideEffects":"Dizziness, dry cough","adverseReactions":"Kidney damage","storage":"--"},
 {"genericName":"Atorvastatin","brandName":"Lipitor","drugClass":"HMG-CoA Reductase Inhibitor","indication":"Cholesterol lowering","schedule":"Rx Only","sideEffects":"Muscle pain","adverseReactions":"Severe muscle problems (rhabdomyolysis)","storage":"--"},
 {"genericName":"Levothyroxine","brandName":"Synthroid, Levoxyl","drugClass":"Thyroid hormone","indication":"Hypothyroidism","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Metformin","brandName":"Glucophage","drugClass":"Biguanide","indication":"Diabetes medication","schedule":"Rx Only","sideEffects":"Nausea, diarrhea","adverseReactions":"Lactic acidosis","storage":"--"},
-{"genericName":"Amlodipine","brandName":"Norvasc","drugClass":"Calcium Channel Blocker","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Metoprolol tartrate","brandName":"Lopressor","drugClass":"Beta-blocker","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"Fatigue, dizziness","adverseReactions":"Low heart rate (bradycardia)","storage":"--"},
-{"genericName":"Metoprolol succinate ER","brandName":"Toprol XL","drugClass":"Beta-blocker","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"Fatigue, dizziness","adverseReactions":"Low heart rate (bradycardia)","storage":"--"},
+{"genericName":"Amlodipine","brandName":"Norvasc","drugClass":"Calcium Channel Blocker","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Metoprolol tartrate","brandName":"Lopressor","drugClass":"Beta-blocker","indication":"Hypertension","schedule":"Rx Only","sideEffects":"Fatigue, dizziness","adverseReactions":"Low heart rate (bradycardia)","storage":"--"},
+{"genericName":"Metoprolol succinate ER","brandName":"Toprol XL","drugClass":"Beta-blocker","indication":"Hypertension","schedule":"Rx Only","sideEffects":"Fatigue, dizziness","adverseReactions":"Low heart rate (bradycardia)","storage":"--"},
 {"genericName":"Omeprazole","brandName":"Prilosec","drugClass":"PPI","indication":"Acid-Reflux/GERD","schedule":"OTC & Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Simvastatin","brandName":"Zocor","drugClass":"HMG-CoA Reductase Inhibitor","indication":"Cholesterol lowering","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Losartan potassium","brandName":"Cozaar","drugClass":"ARB","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Losartan potassium","brandName":"Cozaar","drugClass":"ARB","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Albuterol","brandName":"ProAir HFA, Ventolin HFA","drugClass":"Beta agonist","indication":"Bronchodilator, asthma","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Gabapentin","brandName":"Neurontin","drugClass":"Anticonvulsant","indication":"Neuropathic pain, seizures","schedule":"Schedule V (some states)","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Hydrochlorothiazide","brandName":"Microzide","drugClass":"Thiazide diuretic","indication":"Antihypertensives","schedule":"Rx Only","sideEffects":"Frequent urination","adverseReactions":"Electrolyte imbalances","storage":"--"},
+{"genericName":"Gabapentin","brandName":"Neurontin","drugClass":"Anti-convulsant","indication":"Neuropathic pain, seizures","schedule":"Schedule V (some states)","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Hydrochlorothiazide","brandName":"Microzide","drugClass":"Thiazide diuretic","indication":"Hypertensions","schedule":"Rx Only","sideEffects":"Frequent urination","adverseReactions":"Electrolyte imbalances","storage":"--"},
 {"genericName":"Hydrocodone/APAP","brandName":"Vicodin, Norco, Lortab","drugClass":"Opioid analgesic combination","indication":"Pain reliever","schedule":"Schedule II","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Sertraline","brandName":"Zoloft","drugClass":"SSRI","indication":"Antidepressant","schedule":"Rx Only","sideEffects":"Headache, diarrhea","adverseReactions":"Serotonin syndrome","storage":"--"},
+{"genericName":"Sertraline","brandName":"Zoloft","drugClass":"SSRI","indication":"Anti-depressant","schedule":"Rx Only","sideEffects":"Headache, diarrhea","adverseReactions":"Serotonin syndrome","storage":"--"},
 {"genericName":"Fluticasone","brandName":"Flonase","drugClass":"Nasal steroid","indication":"Allergic rhinitis","schedule":"OTC & Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Montelukast","brandName":"Singulair","drugClass":"Leukotriene modulator","indication":"Asthma treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Furosemide","brandName":"Lasix","drugClass":"Loop diuretic","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"Frequent urination","adverseReactions":"Electrolyte imbalances","storage":"--"},
+{"genericName":"Furosemide","brandName":"Lasix","drugClass":"Loop diuretic","indication":"Hypertension","schedule":"Rx Only","sideEffects":"Frequent urination","adverseReactions":"Electrolyte imbalances","storage":"--"},
 {"genericName":"Amoxicillin","brandName":"Amoxil","drugClass":"Penicillin Antibiotic","indication":"Bacterial Infection","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Oral suspension: BUD 14 days once reconstituted"},
 {"genericName":"Pantoprazole Sodium","brandName":"Protonix","drugClass":"PPI","indication":"Acid-Reflux/GERD","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Acetaminophen","brandName":"Tylenol","drugClass":"Analgesic / Anti-pyretic","indication":"Pain Relief","schedule":"OTC","sideEffects":"N/A","adverseReactions":"Liver damage (high doses)","storage":"--"},
-{"genericName":"Citalopram","brandName":"Celexa","drugClass":"SSRI","indication":"Antidepressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Citalopram","brandName":"Celexa","drugClass":"SSRI","indication":"Anti-depressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Mixed Amphetamine Salts","brandName":"Adderall","drugClass":"Stimulant","indication":"ADHD","schedule":"Schedule II","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Ibuprofen","brandName":"Motrin","drugClass":"NSAID","indication":"Pain/Inflammation Relief","schedule":"OTC & Rx Only","sideEffects":"Stomach upset","adverseReactions":"GI ulcers/bleeding","storage":"--"},
-{"genericName":"Carvedilol","brandName":"Coreg","drugClass":"Beta-Blocker","indication":"Antihypertensives","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Trazodone","brandName":"Desyrel","drugClass":"Antidepressant","indication":"Depression","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Fluoxetine","brandName":"Prozac","drugClass":"SSRI","indication":"Antidepressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Carvedilol","brandName":"Coreg","drugClass":"Beta-Blocker","indication":"Hypertensions","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Trazodone","brandName":"Desyrel","drugClass":"Anti-depressant","indication":"Depression","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Fluoxetine","brandName":"Prozac","drugClass":"SSRI","indication":"Anti-depressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Tramadol","brandName":"Ultram","drugClass":"Opioid Analgesic","indication":"Pain Relief","schedule":"Schedule IV","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Rosuvastatin","brandName":"Crestor","drugClass":"HMG-CoA Reductase Inhibitor","indication":"Cholesterol Lowering","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Semaglutide","brandName":"Ozempic","drugClass":"GLP-1 agonist","indication":"Type 2 Diabetes (off-label WL)","schedule":"Rx Only","sideEffects":"Weight loss","adverseReactions":"Kidney damage","storage":"Prefilled pen: Store in refrigerator. BUD: 28 to 56 days at room temp"},
 {"genericName":"Insulin Glargine","brandName":"Lantus","drugClass":"Long-Acting Insulin","indication":"Diabetes Agent","schedule":"Rx Only","sideEffects":"Weight gain","adverseReactions":"Low blood sugar (hypoglycemia)","storage":"Vial/pen: Store in refrigerator. BUD: 28 to 56 days at room temp"},
 {"genericName":"Clopidogrel","brandName":"Plavix","drugClass":"P2Y12 Inhibitor, Anti-platelet","indication":"Clot Prevention","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Venlafaxine","brandName":"Effexor","drugClass":"SNRI","indication":"Antidepressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Venlafaxine","brandName":"Effexor","drugClass":"SNRI","indication":"Anti-depressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Clonazepam","brandName":"Klonopin","drugClass":"Benzodiazepine","indication":"Anxiety, Sedative","schedule":"Schedule IV","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Propranolol","brandName":"Inderal","drugClass":"Beta-Blocker","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Propranolol","brandName":"Inderal","drugClass":"Beta-Blocker","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Zolpidem Tartrate","brandName":"Ambien","drugClass":"Sedative","indication":"Sleep","schedule":"Schedule IV","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Tamsulosin","brandName":"Flomax","drugClass":"Alpha-Blocker","indication":"Enlarged Prostate","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Aspirin","brandName":"Echotrine","drugClass":"NSAID, Anti-Platelet","indication":"Pain relief, Clot Prevention","schedule":"OTC","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Warfarin","brandName":"Coumadin","drugClass":"Vitamin K Antagonist","indication":"Anticoagulation, Blood Thinner","schedule":"Rx Only","sideEffects":"Bruising","adverseReactions":"Severe bleeding","storage":"--"},
-{"genericName":"Atenolol","brandName":"Tenormin","drugClass":"Beta-Blocker","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Warfarin","brandName":"Coumadin","drugClass":"Vitamin K Antagonist","indication":"Anti-coagulation, Blood Thinner","schedule":"Rx Only","sideEffects":"Bruising","adverseReactions":"Severe bleeding","storage":"--"},
+{"genericName":"Atenolol","brandName":"Tenormin","drugClass":"Beta-Blocker","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Cyclobenzaprine","brandName":"Flexeril","drugClass":"Muscle Relaxer","indication":"Pain Relief","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Oxycodone","brandName":"OxyContin","drugClass":"Opioid Analgesic","indication":"Pain Relief","schedule":"Schedule II","sideEffects":"Constipation, nausea, vomiting","adverseReactions":"Breathing problems (respiratory depression)","storage":"--"},
 {"genericName":"Potassium","brandName":"Klor-Con","drugClass":"Electrolyte","indication":"Electrolyte","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Lisinopril/HCTZ","brandName":"Zestoretic","drugClass":"ACEi/Thiazide Diuretic","indication":"Antihypertensives","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Lisinopril/HCTZ","brandName":"Zestoretic","drugClass":"ACEi/Thiazide Diuretic","indication":"Hypertensions","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Ethinyl Estradiol/ Norethindrone","brandName":"Gildess, Junel, Loestrin","drugClass":"Oral Contraceptive","indication":"Pregnancy Prevention","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Meloxicam","brandName":"Mobic","drugClass":"NSAID","indication":"Pain/Inflammation Relief","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Glipizide","brandName":"Glucotrol","drugClass":"Sulfonylurea","indication":"Diabetes Agent","schedule":"Rx Only","sideEffects":"Dizziness","adverseReactions":"Low blood sugar (hypoglycemia)","storage":"--"},
 {"genericName":"Allopurinol","brandName":"Zyloprim","drugClass":"Xanthine Oxidase Inhibitor","indication":"Gout Treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Azithromycin","brandName":"Zithromax","drugClass":"Macrolide Antibiotic","indication":"Bacterial Infection","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Oral suspension: BUD 10 days once reconstituted"},
-{"genericName":"Duloxetine","brandName":"Cymbalta","drugClass":"SNRI","indication":"Antidepressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Duloxetine","brandName":"Cymbalta","drugClass":"SNRI","indication":"Anti-depressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Ergocalciferol","brandName":"Deltalin","drugClass":"Vitamin D Supplement","indication":"Vitamin D Supplement","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Metronidazole","brandName":"Flagyl","drugClass":"Antibiotic","indication":"Bacterial Infection","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Methylphenidate","brandName":"Ritalin, Concerta","drugClass":"Stimulant","indication":"ADHD","schedule":"Schedule II","sideEffects":"--","adverseReactions":"--","storage":"--"},
@@ -717,7 +767,7 @@
 {"genericName":"Loratadine","brandName":"Claritin","drugClass":"H1RA, Anti-Histamine","indication":"Allergies","schedule":"OTC","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Lorazepam","brandName":"Ativan","drugClass":"Benzodiazepine","indication":"Anxiety, Sedative","schedule":"Schedule IV","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Ethinyl Estradiol/ Norgestimate","brandName":"Ortho Tri-Cyclen","drugClass":"Oral Contraceptive","indication":"Pregnancy Prevention","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Lamotrigine","brandName":"Lamictal","drugClass":"Anticonvulsant","indication":"Seizure Prevention","schedule":"Rx Only","sideEffects":"Dizziness","adverseReactions":"Steven Johnsons Syndrome","storage":"--"},
+{"genericName":"Lamotrigine","brandName":"Lamictal","drugClass":"Anti-convulsant","indication":"Seizure Prevention","schedule":"Rx Only","sideEffects":"Dizziness","adverseReactions":"Steven Johnsons Syndrome","storage":"--"},
 {"genericName":"Estradiol","brandName":"Estrace","drugClass":"Female Hormone","indication":"Hormone Supplement","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Glimepiride","brandName":"Amaryl","drugClass":"Sulfonylurea","indication":"Diabetes Agent","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Fluticasone/Salmeterol","brandName":"Advair Diskus","drugClass":"Inhaled Corticosteroid / Long-Acting Beta-Agonist","indication":"Asthma Treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Inhaled powder: BUD 30 days once removed from foil pouch"},
@@ -726,70 +776,70 @@
 {"genericName":"Cetirizine","brandName":"Zyrtec","drugClass":"H1RA, Anti-Histamine","indication":"Allergies","schedule":"OTC","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Sumatriptan","brandName":"Imitrex","drugClass":"5HT1 Agonist","indication":"Migraine treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Hydroxychloroquine","brandName":"Plaquenil","drugClass":"Anti-Malarial","indication":"Anti-Malaria, Rheumatoid Arthritis, Lupus","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Losartan/HCTZ","brandName":"Hyzaar","drugClass":"ARB/Thiazide Diuretic","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Losartan/HCTZ","brandName":"Hyzaar","drugClass":"ARB/Thiazide Diuretic","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Ethinyl Estradiol/ Drosperinone","brandName":"Yaz, Yazmin","drugClass":"Oral Contraceptive","indication":"Pregnancy Prevention","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Ramipril","brandName":"Altace","drugClass":"ACEi","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Paroxetine","brandName":"Paxil","drugClass":"SSRI","indication":"Antidepressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Ramipril","brandName":"Altace","drugClass":"ACEi","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Paroxetine","brandName":"Paxil","drugClass":"SSRI","indication":"Anti-depressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Hydroxyzine","brandName":"Atarax, Vistaril","drugClass":"H1RA, Anti-Histamine","indication":"Allergies","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Prednisolone","brandName":"OraPred","drugClass":"Corticosteroid","indication":"Anti-inflammatory","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Spironolactone","brandName":"Aldactone","drugClass":"Potassium-Sparing Diuretic","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Oxybutynin","brandName":"Ditropan","drugClass":"Anticholinergic","indication":"Overactive Bladder","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Spironolactone","brandName":"Aldactone","drugClass":"Potassium-Sparing Diuretic","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Oxybutynin","brandName":"Ditropan","drugClass":"Anti-cholinergic","indication":"Overactive Bladder","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Thyroid Extract","brandName":"Armour Thyroid","drugClass":"Thyroid Hormone","indication":"Hypothyroidism","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Fenofibrate","brandName":"Tricor","drugClass":"Fibric Acid Derivative","indication":"Cholesterol Lowering","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Triamterene/HCTZ","brandName":"Dyazide, Maxzide","drugClass":"Potassium Sparing Diuretic/Thiazide Diuretic","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Guanfacine","brandName":"Tenex","drugClass":"Alpha-2 Agonist","indication":"ADHD, Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Triamterene/HCTZ","brandName":"Dyazide, Maxzide","drugClass":"Potassium Sparing Diuretic/Thiazide Diuretic","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Guanfacine","brandName":"Tenex","drugClass":"Alpha-2 Agonist","indication":"ADHD, Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Naproxen","brandName":"Aleve","drugClass":"NSAID","indication":"Pain/Inflammation Relief","schedule":"OTC & Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Cephalexin","brandName":"Keflex","drugClass":"Cephalosporin Antibiotic","indication":"Bacterial Infection","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Oral suspension: BUD 14 days in refrigerator once reconstituted"},
 {"genericName":"Testosterone","brandName":"AndroGel","drugClass":"Male Hormone Therapy","indication":"Hormone Therapy","schedule":"Schedule III","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Pregabalin","brandName":"Lyrica","drugClass":"Anticonvulsant","indication":"Neuropathic Pain, Seizures","schedule":"Schedule V","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Pregabalin","brandName":"Lyrica","drugClass":"Anti-convulsant","indication":"Neuropathic Pain, Seizures","schedule":"Schedule V","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Triamcinolone","brandName":"Kenalog","drugClass":"Corticosteroid","indication":"Anti-Inflammatory","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Valsartan/HCTZ","brandName":"Diovan HCT","drugClass":"ARB/Thiazide Diuretic","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Valsartan/HCTZ","brandName":"Diovan HCT","drugClass":"ARB/Thiazide Diuretic","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Insulin Regular","brandName":"Humulin R, Novolin R","drugClass":"Short Acting Insulin","indication":"Diabetes Agent","schedule":"Rx Only","sideEffects":"Weight gain","adverseReactions":"Low blood sugar (hypoglycemia)","storage":"Vial/pen: Store in refrigerator. BUD: 28 to 42 days at room temp"},
-{"genericName":"Benazepril","brandName":"Lotensin","drugClass":"ACEi","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Benazepril","brandName":"Lotensin","drugClass":"ACEi","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Diazepam","brandName":"Valium","drugClass":"Benzodiazepine","indication":"Sedative, Anti-Anxiety","schedule":"Schedule IV","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Budesonide/Formoterol","brandName":"Symbicort","drugClass":"Inhaled Corticosteroid / Long-Acting Beta-Agonist","indication":"Asthma Treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Inhaler: BUD 3 months once removed from foil pouch"},
 {"genericName":"Hydralazine","brandName":"Apresoline","drugClass":"Vasodilator","indication":"Angina, Heart Failure","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Tiotropium","brandName":"Spiriva","drugClass":"Anticholinergics","indication":"Bronchodilator, Asthma Treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Inhalation spray (Respimat): BUD 3 months once in use"},
+{"genericName":"Tiotropium","brandName":"Spiriva","drugClass":"Anti-cholinergics","indication":"Bronchodilator, Asthma Treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Inhalation spray (Respimat): BUD 3 months once in use"},
 {"genericName":"Doxycycline","brandName":"Doryx","drugClass":"Tetracycline Antibiotic","indication":"Bacterial Infections","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Nebivolol","brandName":"Bystolic","drugClass":"Beta-Blocker","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Nebivolol","brandName":"Bystolic","drugClass":"Beta-Blocker","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Ondansetron","brandName":"Zofran","drugClass":"5HT3 Antagonist","indication":"Nausea/Vomiting","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Insulin Detemir","brandName":"Levemir","drugClass":"Long-Acting Insulin","indication":"Diabetes Agent","schedule":"Rx Only","sideEffects":"Weight gain","adverseReactions":"Low blood sugar (hypoglycemia)","storage":"Vial/pen: Store in refrigerator. BUD: 42 days at room temp"},
-{"genericName":"Verapamil","brandName":"Verelan","drugClass":"Calcium Channel Blocker","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Verapamil","brandName":"Verelan","drugClass":"Calcium Channel Blocker","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Lovastatin","brandName":"Mevacor","drugClass":"HMG-CoA Reductase Inhibitor","indication":"Cholesterol Lowering","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Famotidine","brandName":"Pepcid","drugClass":"H2RA","indication":"Acid-Reflux/GERD","schedule":"OTC","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Timolol","brandName":"Timoptic","drugClass":"Beta-Blocker","indication":"Glaucoma","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Valsartan","brandName":"Diovan","drugClass":"ARB","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Valsartan","brandName":"Diovan","drugClass":"ARB","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Amoxicillin/Clavulanate Potassium","brandName":"Augmentin","drugClass":"Penicillin Antibiotic","indication":"Bacterial Infection","schedule":"Rx Only","sideEffects":"Diarrhea","adverseReactions":"Allergic reaction","storage":"Oral suspension: BUD 10 days in refrigerator once reconstituted"},
 {"genericName":"Promethazine","brandName":"Phenergan","drugClass":"H1RA, Anti-Histamine","indication":"Nausea/Vomiting, Allergies","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Suppositories: Store in refrigerator"},
 {"genericName":"Finasteride","brandName":"Proscar","drugClass":"5-Alpha Reductase Inhibitor","indication":"Enlarged Prostate","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Methotrexate","brandName":"Rheumatrex","drugClass":"Anti-Metabolite","indication":"Rheumatoid Arthritis, Psoriasis","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Benzonatate","brandName":"Tessalon Perles","drugClass":"Antitussive","indication":"Cough","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Amitriptyline","brandName":"Elavil","drugClass":"Tri-Cyclic Antidepressant","indication":"Depression, Sleep","schedule":"Rx Only","sideEffects":"Drowsiness, dry mouth","adverseReactions":"Heart problems (QT prolongation)","storage":"--"},
+{"genericName":"Benzonatate","brandName":"Tessalon Perles","drugClass":"Anti-tussive","indication":"Cough","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Amitriptyline","brandName":"Elavil","drugClass":"Tri-Cyclic Anti-depressant","indication":"Depression, Sleep","schedule":"Rx Only","sideEffects":"Drowsiness, dry mouth","adverseReactions":"Heart problems (QT prolongation)","storage":"--"},
 {"genericName":"Hydrocodone Bitartrate","brandName":"N/A","drugClass":"Opioid Analgesic","indication":"Pain Relief","schedule":"Schedule II","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Memantine","brandName":"Namenda","drugClass":"NMDA Receptor Antagonist","indication":"Alzheimer's","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Esomeprazole","brandName":"Nexium","drugClass":"PPI","indication":"Acid-Reflux/GERD","schedule":"OTC & Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Mirtazapine","brandName":"Remeron","drugClass":"Antidepressant","indication":"Depression","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Doxazosin","brandName":"Cardura","drugClass":"Alpha-1 Blocker","indication":"Enlarged Prostate, Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Mirtazapine","brandName":"Remeron","drugClass":"Anti-depressant","indication":"Depression","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Doxazosin","brandName":"Cardura","drugClass":"Alpha-1 Blocker","indication":"Enlarged Prostate, Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Tizanidine","brandName":"Zanaflex","drugClass":"Muscle Relaxant","indication":"Muscle Relaxant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Nifedipine","brandName":"ProCardia","drugClass":"Calcium Channel Blocker","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Nifedipine","brandName":"ProCardia","drugClass":"Calcium Channel Blocker","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Ezetimibe","brandName":"Zetia","drugClass":"Cholesterol Absorption Inhibitor","indication":"Cholesterol Lowering","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Alendronate","brandName":"Fosamax","drugClass":"Bisphosphonate","indication":"Osteoporosis","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Sulfamethoxazole/TMP","brandName":"Bactrim","drugClass":"Sulfonamide Antibiotic","indication":"Bacterial Infection","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Valacyclovir","brandName":"Valtrex","drugClass":"Anti-Viral","indication":"Viral Infections","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Lisdexamfetamine","brandName":"Vyvanse","drugClass":"Stimulant","indication":"ADHD","schedule":"Schedule II","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Enalapril","brandName":"Vasotec","drugClass":"ACEi","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Enalapril","brandName":"Vasotec","drugClass":"ACEi","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Nirmatrelvir/ritonavir","brandName":"Paxlovid","drugClass":"Anti-Viral","indication":"COVID","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Ferrous Sulfate","brandName":"Feosol","drugClass":"Iron Supplement","indication":"Iron Supplement","schedule":"Rx Only","sideEffects":"Constipation","adverseReactions":"Iron toxicity (high doses)","storage":"--"},
 {"genericName":"Docusate","brandName":"Colase","drugClass":"Stool Softener","indication":"Stool Softener","schedule":"OTC","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Hydrocortisone","brandName":"Coritzone","drugClass":"Corticosteroid","indication":"Anti-Inflammatory","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Apixaban","brandName":"Eliquis","drugClass":"Factor Xa Inhibitor","indication":"Anticoagulation, Blood Thinner","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Apixaban","brandName":"Eliquis","drugClass":"Factor Xa Inhibitor","indication":"Anti-coagulation, Blood Thinner","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Insulin Lispro","brandName":"Humalog","drugClass":"Short-Acting Insulin","indication":"Diabetes Agents","schedule":"Rx Only","sideEffects":"Weight gain","adverseReactions":"Low blood sugar (hypoglycemia)","storage":"Vial/pen: Store in refrigerator. BUD: 28 days at room temp"},
 {"genericName":"Morphine","brandName":"MS Contin","drugClass":"Opioid Analgesic","indication":"Pain Relief","schedule":"Schedule II","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Diclofenac","brandName":"Voltaren","drugClass":"NSAID","indication":"Pain/Inflammation Relief","schedule":"OTC & Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Pioglitazone","brandName":"Actos","drugClass":"Thiazolidinedione","indication":"Diabetes Agent","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Risperidone","brandName":"Risperdal","drugClass":"Anti-Psychotic","indication":"Mood Disorders","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Sitagliptin","brandName":"Januvia","drugClass":"DPP-4 Inhibitor","indication":"Diabetes Agent","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Divalproex Sodium","brandName":"Depakote","drugClass":"Anticonvulsant","indication":"Seizures, Mood Diorders","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Divalproex Sodium","brandName":"Depakote","drugClass":"Anti-convulsant","indication":"Seizures, Mood Diorders","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Methylprednisolone","brandName":"Medrol","drugClass":"Corticosteroid","indication":"Anti-Inflammatory","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Ethinyl Estradiol/ Desogestrel","brandName":"April, Azurette","drugClass":"Oral Contraceptive","indication":"Pregnancy Prevention, Hormone Regulation","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Meclizine","brandName":"Dramamine, Antivert","drugClass":"H1RA, Anti-Histamine","indication":"Allergies, Motion Sickness","schedule":"OTC","sideEffects":"--","adverseReactions":"--","storage":"--"},
@@ -799,14 +849,14 @@
 {"genericName":"Oseltamivir","brandName":"Tamiflu","drugClass":"Anti-Viral","indication":"influenza Treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Acyclovir","brandName":"Zovirax","drugClass":"Anti-Viral","indication":"Viral Infection","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Liraglutide","brandName":"Victoza","drugClass":"GLP-1 Agonist","indication":"Diabetes Agents","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Prefilled Pen: Store in refrigerator. BUD: 30 days at room temp"},
-{"genericName":"Amlodipine/Benazepril","brandName":"Lotrel","drugClass":"Calcium Channel Blocker/ACEi","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Amlodipine/Benazepril","brandName":"Lotrel","drugClass":"Calcium Channel Blocker/ACEi","indication":"Hypertension","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Brimonidine Tartrate","brandName":"Alphagan","drugClass":"Alpha agonist","indication":"Glaucoma","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Digoxin","brandName":"Lanoxin","drugClass":"Cardiac Glycoside","indication":"Heart Failure","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Adalimumab","brandName":"Humira","drugClass":"TNF-alpha Blocker","indication":"Chron's, Ulcerative Colitis","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Prefilled pen/syringe: Store in refrigerator. BUD: 14 to 31 days at room temp"},
 {"genericName":"Cyanocobalamin","brandName":"Nascobal","drugClass":"Vitamin B12 Supplement","indication":"Vitamin B12 Supplement","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Magnesium","brandName":"Uro-Mag","drugClass":"Magnesium Supplementation","indication":"Magnesium Supplementation","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Albuterol/Ipratropium","brandName":"Combivent","drugClass":"Inhaled Beta-2 Agonist/Anticholinergics","indication":"Asthma Treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Chlorthalidone","brandName":"Hygroton","drugClass":"Thiazide Diuretic","indication":"Antihypertensive","schedule":"Rx Only","sideEffects":"Sulfonamide allergy (cross-reactivity)","adverseReactions":"--","storage":"--"},
+{"genericName":"Albuterol/Ipratropium","brandName":"Combivent","drugClass":"Inhaled Beta-2 Agonist/Anti-cholinergics","indication":"Asthma Treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Chlorthalidone","brandName":"Hygroton","drugClass":"Thiazide Diuretic","indication":"Hypertension","schedule":"Rx Only","sideEffects":"Sulfonamide allergy (cross-reactivity)","adverseReactions":"--","storage":"--"},
 {"genericName":"Glyburide","brandName":"Diabeta","drugClass":"Sulfonylurea","indication":"Diabetes Agent","schedule":"Rx Only","sideEffects":"Sulfonamide allergy (cross-reactivity)","adverseReactions":"--","storage":"--"},
 {"genericName":"Levocetirizine","brandName":"Xyzal","drugClass":"H1RA, Anti-Histamine","indication":"Allergies","schedule":"OTC","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Carbamazepine","brandName":"Tegretol","drugClass":"Anti-Convulsant","indication":"Seizures","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
@@ -814,9 +864,9 @@
 {"genericName":"Methocarbamol","brandName":"Robaxin","drugClass":"Muscle Relaxer","indication":"Pain Relief","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Pramipexole","brandName":"Mirapex","drugClass":"Dopamine Agonist","indication":"Parkinson's","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Lithium","brandName":"Lithobid","drugClass":"Anti-Psychotic","indication":"Mood Disorders","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Dicyclomine","brandName":"Bentyl","drugClass":"Anticholinergics","indication":"Irritable Bowel Syndrome","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Dicyclomine","brandName":"Bentyl","drugClass":"Anti-cholinergics","indication":"Irritable Bowel Syndrome","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Fluconazole","brandName":"Diflucan","drugClass":"Anti-fungal","indication":"Fungal Infections","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Nortriptyline","brandName":"Pamelor","drugClass":"Tri-Cyclic Antidepressant","indication":"Depression","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Nortriptyline","brandName":"Pamelor","drugClass":"Tri-Cyclic Anti-depressant","indication":"Depression","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Carbidopa/Levodopa","brandName":"Sinemet","drugClass":"Dopamine Agonist","indication":"Parkinson's","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Nitrofurantoin","brandName":"Macrobid","drugClass":"Antibiotic","indication":"Bacterial Urinary Tract Infection Treatment","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Mupirocin","brandName":"Bactroban","drugClass":"Topical Antibiotic","indication":"Bacterial Infection","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
@@ -836,18 +886,238 @@
 {"genericName":"Linagliptin","brandName":"Tradjenta","drugClass":"DPP-4 Inhibitor","indication":"Diabetes Agents","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Alprazolam","brandName":"Xanax","drugClass":"Benzodiazepine","indication":"Anxiety","schedule":"Schedule IV","sideEffects":"--","adverseReactions":"--","storage":"--"},
 {"genericName":"Prednisone","brandName":"Deltasone","drugClass":"Corticosteroid","indication":"Inflammation","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Escitalopram","brandName":"Lexapro","drugClass":"SSRI","indication":"Antidepressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Bupropion","brandName":"Wellbutrin","drugClass":"Antidepressant","indication":"Depression","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
-{"genericName":"Dupilumab","brandName":"Dupixent","drugClass":"Interleukin inhibitor","indication":"Eczema, Asthma, COPD","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Prefilled pen/syringe: Store in refrigerator. BUD: 14 days at room temp"}
+{"genericName":"Escitalopram","brandName":"Lexapro","drugClass":"SSRI","indication":"Anti-depressant","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Bupropion","brandName":"Wellbutrin","drugClass":"Anti-depressant","indication":"Depression","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"--"},
+{"genericName":"Dupilumab","brandName":"Dupixent","drugClass":"Interleukin inhibitor","indication":"Eczema, Asthma, COPD","schedule":"Rx Only","sideEffects":"--","adverseReactions":"--","storage":"Prefilled pen/syringe: Store in refrigerator. BUD: 14 days at room temp"},
+  {
+    "genericName": "Ethinyl Estradiol/ Levonorgestrel",
+    "brandName": "Amethia, Amethyst",
+    "drugClass": "Oral Contraceptive",
+    "indication": "Pregnancy Prevention, Hormone Regulation",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Diltiazem",
+    "brandName": "Cardizem",
+    "drugClass": "Calcium Channel Blocker",
+    "indication": "Hypertension",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Celecoxib",
+    "brandName": "Celebrex",
+    "drugClass": "COX-2 Selective NSAID",
+    "indication": "Pain/Inflammation Relief",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Clindamycin",
+    "brandName": "Cleocin",
+    "drugClass": "Lincomycin Antibiotic",
+    "indication": "Bacterial Infection",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Quetiapine Fumarate",
+    "brandName": "Seroquel",
+    "drugClass": "Anti-Psychotic",
+    "indication": "Mood Disorders",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Ciprofloxacin",
+    "brandName": "Cipro",
+    "drugClass": "Fluoroquinolone Antibiotic",
+    "indication": "Bacterial Infection",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Gemfibrozil",
+    "brandName": "Lopid",
+    "drugClass": "Fibrate Derivative",
+    "indication": "Cholesterol Lowering",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Topiramate",
+    "brandName": "Topamax",
+    "drugClass": "Anti-convulsant",
+    "indication": "Seizures, Migraines",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Ropinirole",
+    "brandName": "Requip",
+    "drugClass": "Dopamine Agonist",
+    "indication": "Parkinson's Treatment",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Metformin/Sitagliptin",
+    "brandName": "Janumet",
+    "drugClass": "Biguanide/DPP-4 Inhibitor",
+    "indication": "Diabetes Agent",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Bacitracin/Neomycin/ Polymyxin B",
+    "brandName": "Neosporin",
+    "drugClass": "Triple Antibiotic",
+    "indication": "Bacterial Infection",
+    "schedule": "OTC",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Rivaroxaban",
+    "brandName": "Xarelto",
+    "drugClass": "Factor Xa Inhibitor",
+    "indication": "Anti-coagulant, Blood Thinner",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Baclofen",
+    "brandName": "Lioresal",
+    "drugClass": "Muscle Relaxant",
+    "indication": "Muscle Relaxant",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Clonidine",
+    "brandName": "Catapres",
+    "drugClass": "Alpha-2 Agonist",
+    "indication": "Hypertension",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Levetiracetam",
+    "brandName": "Keppra",
+    "drugClass": "Anti-Convulsant",
+    "indication": "Seizures",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Norethindrone",
+    "brandName": "Camila, Heather",
+    "drugClass": "Oral Contraceptive",
+    "indication": "Pregnancy Prevention",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Buspirone",
+    "brandName": "Buspar",
+    "drugClass": "Anti-anxiety",
+    "indication": "Anxiety",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Isosorbide Mononitrate",
+    "brandName": "Imdur",
+    "drugClass": "Nitrate",
+    "indication": "Angina, Heart Failure",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Temazepam",
+    "brandName": "Restoril",
+    "drugClass": "Benzodiazepine",
+    "indication": "Sedative, Anti-Anxiety",
+    "schedule": "Schedule IV",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "--"
+  },
+  {
+    "genericName": "Latanoprost",
+    "brandName": "Xalatan",
+    "drugClass": "Prostaglandin Analog",
+    "indication": "Glaucoma Treatment",
+    "schedule": "Rx Only",
+    "sideEffects": "--",
+    "adverseReactions": "--",
+    "storage": "Ophthalmic solution: Store in refrigerator. BUD: 6 weeks at room temp"
+  },
+  {
+    "genericName": "Aripiprazole",
+    "brandName": "Abilify",
+    "drugClass": "Anti-Psychotic",
+    "indication": "Mood Disorders",
+    "schedule": "Rx Only",
+    "sideEffects": "Weight gain",
+    "adverseReactions": "Movement problems (Tardive dyskinesia)",
+    "storage": "--"
+  },
+  {
+    "genericName": "Nitroglycerin",
+    "brandName": "Nitro-STAT",
+    "drugClass": "Nitrate Derivative",
+    "indication": "Angina, Heart Failure",
+    "schedule": "Rx Only",
+    "sideEffects": "Headache, dizziness",
+    "adverseReactions": "Low blood pressure (hypotension)",
+    "storage": "Tablets: Store in original glass container"
+  }
         ];
 
         // Category mappings
         const categoryMappings = {
-            'Cardiovascular': ['ACE Inhibitor', 'ACEi', 'Beta-Blocker', 'Beta-blocker', 'HMG-CoA Reductase Inhibitor', 'Factor Xa Inhibitor', 'Anticoagulant', 'Vitamin K Antagonist', 'Anti-Arrhythmic', 'Antiarrhythmic', 'Thiazide Diuretic', 'Thiazide diuretic', 'Loop Diuretic', 'Loop diuretic', 'Nitrate', 'Vasodilator', 'Calcium Channel Blocker', 'ARB', 'P2Y12 Inhibitor', 'Anti-platelet', 'Anti-Platelet', 'Cardiac Glycoside', 'Potassium-Sparing Diuretic', 'Fibric Acid Derivative', 'Cholesterol Absorption Inhibitor'],
-            'Infections': ['Penicillin Antibiotic', 'Cephalosporin Antibiotic', 'Cephalosporin Antibiotics', 'Macrolide Antibiotic', 'Fluoroquinolone Antibiotic', 'Antibiotic', 'Sulfonamide Antibiotic', 'Anti-Viral', 'Anti-fungal', 'Tetracycline Antibiotic', 'Topical Antibiotic', 'TNF-alpha Blocker'],
-            'Neurology': ['Tri-Cyclic Antidepressant', 'Tricyclic Antidepressant', 'SSRI', 'SNRI', 'Antidepressant', 'Anti-Psychotic', 'Antipsychotic', 'Anticonvulsant', 'Anti-Convulsant', 'H1RA', 'Anti-Histamine', 'Antihistamine', 'Benzodiazepine', 'Sedative', 'Stimulant', 'Cholinesterase Inhibitor', 'NMDA Receptor Antagonist', 'Dopamine Agonist'],
-            'Metabolic': ['Biguanide', 'Sulfonylurea', 'GLP-1 Agonist', 'GLP-1 agonist', 'Rapid Acting Insulin', 'Long-Acting Insulin', 'Short Acting Insulin', 'Short-Acting Insulin', 'Bisphosphonate', 'Prostaglandin Analog', 'Thyroid Hormone', 'Thyroid hormone', 'DPP-4 Inhibitor', 'Thiazolidinedione', 'SGLT-2 Inhibitor', 'Alpha agonist', 'Xanthine Oxidase Inhibitor'],
-            'Pain': ['Analgesic', 'Anti-pyretic', 'NSAID', 'COX-2 Selective NSAID', 'Opioid Analgesic', 'Opioid analgesic combination', 'Muscle Relaxer', 'Muscle Relaxant', 'Pain Reliever', 'Pain Releiver/Relaxant', '5HT1 Agonist'],
+            'Cardiovascular': ['ACE Inhibitor', 'ACEi', 'Beta-Blocker', 'Beta-blocker', 'HMG-CoA Reductase Inhibitor', 'Factor Xa Inhibitor', 'Anti-coagulant', 'Vitamin K Antagonist', 'Anti-Arrhythmic', 'Antiarrhythmic', 'Thiazide Diuretic', 'Thiazide diuretic', 'Loop Diuretic', 'Loop diuretic', 'Nitrate', 'Vasodilator', 'Calcium Channel Blocker', 'ARB', 'P2Y12 Inhibitor', 'Anti-platelet', 'Anti-Platelet', 'Cardiac Glycoside', 'Potassium-Sparing Diuretic', 'Fibric Acid Derivative', 'Cholesterol Absorption Inhibitor','Calcium Channel Blocker','Fibrate Derivative','Factor Xa Inhibitor','Alpha-2 Agonist','Nitrate Derivative','Nitrate'],
+            'Infections': ['Penicillin Antibiotic', 'Cephalosporin Antibiotic', 'Cephalosporin Antibiotics', 'Macrolide Antibiotic', 'Fluoroquinolone Antibiotic', 'Antibiotic', 'Sulfonamide Antibiotic', 'Anti-Viral', 'Anti-fungal', 'Tetracycline Antibiotic', 'Topical Antibiotic', 'TNF-alpha Blocker','Lincomycin Antibiotic','Fluoroquinolone Antibiotic','Triple Antibiotic'],
+            'Neurology': ['Tri-Cyclic Anti-depressant', 'Tricyclic Anti-depressant', 'SSRI', 'SNRI', 'Anti-depressant', 'Anti-Psychotic', 'Anti-psychotic', 'Anti-convulsant', 'Anti-Convulsant', 'H1RA', 'Anti-Histamine', 'Anti-histamine', 'Benzodiazepine', 'Sedative', 'Stimulant', 'Cholinesterase Inhibitor', 'NMDA Receptor Antagonist', 'Dopamine Agonist','Anti-anxiety','Benzodiazepine'],
+            'Metabolic': ['Oral Contraceptive','Biguanide', 'Sulfonylurea', 'GLP-1 Agonist', 'GLP-1 agonist', 'Rapid Acting Insulin', 'Long-Acting Insulin', 'Short Acting Insulin', 'Short-Acting Insulin', 'Bisphosphonate', 'Prostaglandin Analog', 'Thyroid Hormone', 'Thyroid hormone', 'DPP-4 Inhibitor', 'Thiazolidinedione', 'SGLT-2 Inhibitor', 'Alpha agonist', 'Xanthine Oxidase Inhibitor','Biguanide/DPP-4 Inhibitor'],
+            'Pain': ['Analgesic', 'Anti-pyretic', 'NSAID', 'COX-2 Selective NSAID', 'Opioid Analgesic', 'Opioid analgesic combination', 'Muscle Relaxer', 'Muscle Relaxant', 'Pain Reliever', 'Pain Releiver/Relaxant', '5HT1 Agonist','COX-2 Selective NSAID'],
             'Stability': [] // Will include drugs with special storage
         };
 
@@ -950,7 +1220,7 @@
                 sideEffectsSection.style.display = 'block';
                 const effects = drug.sideEffects.split(',').map(e => e.trim());
                 document.getElementById('sideEffectsContent').innerHTML = effects.map(effect => 
-                    `<div class="side-effect-item"><span class="checkmark">✓</span>${effect}</div>`
+                    `<div class="side-effect-item"><span class="checkmark"><i class="fa-solid fa-check"></i></span>${effect}</div>`
                 ).join('');
             } else {
                 sideEffectsSection.style.display = 'none';
@@ -981,7 +1251,7 @@
                 const title = storageParts[0].trim();
                 const info = storageParts.length > 1 ? storageParts.slice(1).join(':').trim() : '';
                 document.getElementById('storageContent').innerHTML = `
-                    <span class="storage-icon">📦</span>
+                    <span class="storage-icon"><i class="fa-solid fa-box"></i></span>
                     <div class="storage-text">
                         <div class="storage-title">${title}${info ? ':' : ''}</div>
                         ${info ? `<div class="storage-info">${info}</div>` : ''}
